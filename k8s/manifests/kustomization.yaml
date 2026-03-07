@@ -6,3 +6,8 @@ resources:
   - api-service.yaml
   - postgress-deployment.yaml
   - postgress-service.yaml
+  - elasticsearch-deployment.yaml
+  - elasticsearch-secrets.yaml
+  - kibana-deployment.yaml
+  - filebeat-kubernetes.yaml
+  - kube-state-metrics.yaml

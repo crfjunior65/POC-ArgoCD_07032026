@@ -18,7 +18,7 @@ spec:
         command: ['sh', '-c', 'until nc -z postgres-service 5432; do echo waiting for postgres; sleep 2; done;']
       containers:
       - name: hello-api-3-0-0
-        image: crfjuior65/hello-api:3.0.0
+        image: crfjunior65/poc-gitops:3.0.0
         imagePullPolicy: Always
         env:
         - name: DB_HOST

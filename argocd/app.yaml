@@ -5,8 +5,8 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: |
-      hello-api-3-0-0=crfjuior65/hello-api:3.0.0
-      hello-api-3-0-1=crfjuior65/hello-api:3.0.1
+      hello-api-3-0-0=crfjunior65/poc-gitops:3.0.0
+      hello-api-3-0-1=crfjunior65/poc-gitops:3.0.1
     argocd-image-updater.argoproj.io/hello-api-3-0-0.update-strategy: digest
     argocd-image-updater.argoproj.io/hello-api-3-0-1.update-strategy: digest
     argocd-image-updater.argoproj.io/hello-api-3-0-0.allow-tags: regexp:^[0-9]+\.[0-9]+\.[0-9]+$
@@ -16,7 +16,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/crfjuior65/k8s-kind-cluster.git
+    repoURL: https://github.com/crfjunior65/POC-ArgoCD_07032026.git
     targetRevision: HEAD
     path: k8s/manifests
     kustomize: {}
