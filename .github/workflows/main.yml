@@ -31,8 +31,12 @@ jobs:
       with:
         images: crfjunior65/poc-gitops
         tags: |
+          type=raw,value=${{ github.ref_name == 'main' }} ##  && 'latest' || 'develop' }}
+          type=sha,format=short  # Tag com o commit hash
           type=raw,value=v3.0.${{ github.run_number }}
-          type=raw,value=latest
+
+          #type=raw,value=v3.0.${{ github.run_number }}
+          #type=raw,value=latest
 
     - name: Build and Push Image
       uses: docker/build-push-action@v5
