@@ -89,4 +89,5 @@ spec:
   - name: http
     port: 5601
     targetPort: 5601
-  type: LoadBalancer
+    nodePort: 30561
+  type: NodePort
