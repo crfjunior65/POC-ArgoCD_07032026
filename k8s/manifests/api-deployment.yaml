@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-api
+  name: api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-api
+      app: api
   template:
     metadata:
       labels:
-        app: hello-api
+        app: api
     spec:
       initContainers:
       - name: wait-for-postgres
         image: busybox
         command: ['sh', '-c', 'until nc -z postgres-service 5432; do echo waiting for postgres; sleep 2; done;']
       containers:
-      - name: hello-api-3-0-0
-        image: crfjunior65/poc-gitops:3.0.0
+      - name: api
+        image: crfjunior65/poc-gitops:v3.0.1
         imagePullPolicy: Always
         env:
         - name: DB_HOST

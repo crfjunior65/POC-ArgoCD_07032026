@@ -14,7 +14,7 @@ kind create cluster --config k8s/kind-config.yaml --name kind
 echo "=== 🛠️ Instalando ArgoCD e Image Updater ==="
 kubectl create namespace argocd || true
 kubectl apply --server-side -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-kubectl apply --server-side -n argocd -f https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/stable/manifests/install.yaml
+kubectl apply --server-side -n argocd -f https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/v0.12.2/manifests/install.yaml
 
 echo "=== ⏳ Aguardando ArgoCD ficar pronto (Pode demorar uns 2-3 min) ==="
 kubectl wait --for=condition=available --timeout=300s deployment/argocd-server -n argocd

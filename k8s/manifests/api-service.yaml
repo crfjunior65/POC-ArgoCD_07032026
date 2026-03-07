@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-api-service
+  name: api-service
 spec:
   selector:
-    app: hello-api
+    app: api
   ports:
   - name: http
     port: 8000
