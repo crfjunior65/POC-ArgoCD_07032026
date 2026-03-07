@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kibana
-  namespace: default
+  namespace: api-namespace
 spec:
   replicas: 1
   selector:
@@ -20,16 +20,16 @@ spec:
         args:
         - |
           echo "Aguardando Elasticsearch ficar disponível..."
-          until curl -s -u elastic:teste123 http://elasticsearch-service:9200/_cluster/health; do
+          until curl -s -u elastic:elastic123 http://elasticsearch-service:9200/_cluster/health; do
             echo "Elasticsearch não está pronto ainda..."
             sleep 10
           done
           
           echo "Configurando senha do usuário kibana_system..."
-          curl -X POST -u elastic:teste123 \
+          curl -X POST -u elastic:elastic123 \
             -H "Content-Type: application/json" \
             http://elasticsearch-service:9200/_security/user/kibana_system/_password \
-            -d '{"password":"teste123"}' || echo "Senha já configurada ou erro ignorável"
+            -d '{"password":"elastic123"}' || echo "Senha já configurada ou erro ignorável"
             
           echo "Setup concluído!"
         env:
@@ -81,7 +81,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kibana-service
-  namespace: default
+  namespace: api-namespace
 spec:
   selector:
     app: kibana
