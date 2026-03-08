@@ -45,7 +45,7 @@ def init_db():
 
 @app.route('/')
 def hello_world():
-    return {'message': 'Hello World from Kubernetes/GitOps!'}
+    return {'message': 'Opa!!! Kubernetes/GitOps!'}
 
 @app.route('/health')
 def health():
