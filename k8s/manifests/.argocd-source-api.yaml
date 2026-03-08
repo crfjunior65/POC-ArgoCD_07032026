@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - crfjunior65/poc-gitops:v3.0.7
