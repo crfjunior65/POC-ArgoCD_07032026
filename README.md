@@ -1,4 +1,4 @@
-# ArgoCD GitOps & Observability POC
+# ArgoCD GitOps/Image Updaters & Observability POC
 
 ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![ArgoCD](https://img.shields.io/badge/argocd-%23ef7b4d.svg?style=for-the-badge&logo=argo&logoColor=white)
